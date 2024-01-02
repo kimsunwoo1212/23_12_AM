@@ -51,7 +51,7 @@ public class Main {
 					}
 				}
 
-			} else if (cmd.startsWith("article detail")) {
+			} else if (cmd.startsWith("article delete")) {
 
 				String[] cmdDiv = cmd.split(" ");
 
@@ -77,10 +77,8 @@ public class Main {
 				if (foundArticle == null) {
 					System.out.printf("%d번 게시글은 없습니다\n", id);
 				} else {
-					System.out.println("번호 : " + foundArticle.getId());
-					System.out.println("날짜 : " + foundArticle.getRegDate());
-					System.out.println("제목 : " + foundArticle.getTitle());
-					System.out.println("내용 : " + foundArticle.getBody());
+					articles.remove(id - 2);
+					System.out.println(id + "번 글이 삭제되었습니다.");
 				}
 
 			} else {
@@ -122,7 +120,7 @@ class Article {
 
 	public void setRegDate(String regDate) {
 		this.regDate = regDate;
-	}
+	}                                                                                              
 
 	public String getTitle() {
 		return title;
