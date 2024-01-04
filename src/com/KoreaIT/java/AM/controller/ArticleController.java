@@ -38,6 +38,9 @@ public class ArticleController extends Controller {
 			showDetail();
 			break;
 		case "modify":
+			if (isloginId() == false) {
+				System.out.println("본인 글만 수정할 수 있습니다.");
+			}
 			doModify();
 			break;
 		case "delete":
@@ -47,6 +50,10 @@ public class ArticleController extends Controller {
 			System.out.println("명령어 확인해 (actionMethodName 오류)4");
 			break;
 		}
+	}
+
+	private boolean isloginId() {	
+		return false;
 	}
 
 	private void doWrite() {
